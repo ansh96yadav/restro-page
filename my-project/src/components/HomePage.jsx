@@ -57,11 +57,6 @@ function HomePage() {
                     Cafe
                 </p>
             </div>
-            {/* <img 
-            src="resto.jpg" 
-            alt="Restro" 
-            className='absolute w-100 z-0 lg:left-[24%] left-[15%]'
-            /> */}
             <img 
             src="resto.jpg" 
             alt="Resto" 
@@ -145,21 +140,22 @@ function HomePage() {
                 <div className='flex flex-col lg:gap-8 md:gap-6 gap-4'>
                     <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
                         <img src="menu1.jpg" alt="" className='rounded-[30px]'/>
-                        <p className='absolute inset-0 bg-[#2e2e2ed4] flex justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'>Caesar Salad</p>
+                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Caesar Salad</p>$.40<p></p></div>
                     </div>
                     <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
                         <img src="menu4.jpg" alt="" className='rounded-[30px]'/>
-                        <p className='absolute inset-0 bg-[#2e2e2ed4] flex justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'> Sauteed mushrooms with pumpkin and sweet pepper</p>
+                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Sauteed mushrooms with pumpkin and sweet pepper</p>$.60<p></p></div>
                     </div>
                 </div>
                 <div className='flex flex-col lg:gap-8 md:gap-6 gap-4'>
                     <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
                         <img src="menu2.jpg" alt="" className='rounded-[30px]'/>
-                        <p className='absolute inset-0 bg-[#2e2e2ed4] flex justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'>Christmas salad</p>
+                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Christmas salad</p>$.35<p></p></div>
                     </div>
                     <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
                         <img src="menu3.jpg" alt="" className='rounded-[30px]'/>
-                        <p className='absolute inset-0 bg-[#2e2e2ed4] flex justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'>Chicken Feast Pizza</p>
+                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Chicken Feast Pizza</p>$.20<p></p></div>
+                        
                     </div>
                 </div>
             </div>
