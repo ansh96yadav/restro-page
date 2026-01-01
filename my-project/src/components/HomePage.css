@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Caveat:wght@400..700&family=Tangerine:wght@400;700&display=swap');
+
+*{
+    font-family:  cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.cansium-text {
+    font-family: "Tangerine", cursive;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.caveat-text {
+    font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
