@@ -1,37 +1,97 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as FaIcons from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import './HomePage.css'
-
+import Menu from './Menu'
 
 function HomePage() {
+
+    const menu_items = [
+            [
+            {
+                image: "menu1.jpg",
+                name: "Caesar Salad",
+                price: "40",
+            },
+            {
+                image: "menu4.jpg",
+                name: "Sauteed mushrooms with pumpkin and sweet pepper",
+                price: "60",
+            },],
+            [{
+                image: "menu2.jpg",
+                name: "Christmas salad",
+                price: "35",
+            },
+            {
+                image: "menu3.jpg",
+                name: "Chicken Feast Pizza",
+                price: "20",
+            },]
+        ]
+
+        const nav_links = [
+            {
+                title: "Home",
+                linkto: "#home"
+            },
+            {
+                title: "About Us",
+                linkto: "#about"
+            },
+            {
+                title: "Menu",
+                linkto: "#menu"
+            },
+            {
+                title: "Contact",
+                linkto: "#contact"
+            },
+        ]
+
+        const aboutList = [
+            {
+                image: 'experience.png',
+                txt1: '7+',
+                txt2: 'Years Of Experience',
+            },
+            {
+                image: 'menu.png',
+                txt1: '30+',
+                txt2: 'Dishes in Our Menu',
+            },
+            {
+                image: 'reviews.png',
+                txt1: '500+',
+                txt2: 'Customer Reviews',
+            },
+            {
+                image: 'happy.png',
+                txt1: '10K+',
+                txt2: 'Happy Customers',
+            },
+        ]
+
   return (
     <div className='w-full h-fit bg-[#000000] relative'>
         <div className='absolute fixed bottom-4 right-4'>
             <a href='#home'><FaIcons.FaArrowUp className='w-10 h-10 rounded-full bg-[#313131] p-3 text-[white]'/></a>
         </div>
-      <nav id='nav' className='w-full h-30 md:h-40 z-100 sticky top-0 bg-[#000000] flex flex-wrap justify-between px-20 py-[1rem] items-center'>
+      <nav id='nav' className='w-full h-fit lg:h-fit md:h-40 z-100 sticky top-0 bg-[#000000] flex flex-wrap justify-between px-20 py-[2rem] items-center'>
         <div className='flex gap-4 items-center justify-center'>
-            <FaIcons.FaUtensils className='text-[3rem] text-[#2c2c2c]'/>
-            <h1 className='font-extrabold text-4xl text-[white]'>
+            <FaIcons.FaUtensils className='text-[2.5rem] text-[#2c2c2c]'/>
+            <h1 className='font-extrabold text-3xl text-[white]'>
                 Restraunt
             </h1>
         </div>
         <div className='flex lg:gap-20 lg:flex-row items-center flex-col gap-4'>
         <div className='lg:flex md:flex hidden'>
             <ul className='flex gap-6 font-bold text-[1.1rem]'>
-                <li className='text-[#525252] font-bold hover:text-[#c2c2c2] cursor-pointer focus:text-[white] transition-all duration-700 ease-linear'>
-                    <a href='#home'>Home</a>
+                {nav_links.map((link) => (
+                    <li className='text-[#525252] font-bold hover:text-[#c2c2c2] cursor-pointer focus:text-[white] transition-all duration-700 ease-linear'>
+                    <a href={link.linkto}>{link.title}</a>
                 </li>
-                <li className='text-[#525252] font-bold hover:text-[#c2c2c2] cursor-pointer focus:text-[white] transition-all duration-700 ease-linear'>
-                    <a href='#about'>About Us</a>
-                </li>
-                <li className='text-[#525252] font-bold hover:text-[#c2c2c2] cursor-pointer focus:text-[white] transition-all duration-700 ease-linear'>
-                    <a href='#menu'>Menu</a>
-                </li>
-                <li className='text-[#525252] font-bold hover:text-[#c2c2c2] cursor-pointer focus:text-[white] transition-all duration-700 ease-linear'>
-                    <a href='#contact'>Contact Us</a>
-                </li>
+                ))}
             </ul>
         </div>
         <div className='flex lg:flex-col gap-4 lg:flex md:flex hidden flex-row'>
@@ -39,7 +99,7 @@ function HomePage() {
                 <FaIcons.FaPhoneAlt/>
                 5555-1234-4321
             </p>
-            <button className='text-[white] py-3 font-extrabold cursor-pointer px-4 rounded-2xl bg-[#6a00ff]'>
+            <button className='text-[white] py-2 font-extrabold cursor-pointer px-3 rounded-2xl bg-[#6a00ff]'>
                 Book A Table
             </button>
         </div></div>
@@ -66,12 +126,6 @@ function HomePage() {
                 <p className='lg:px-30 px-10 lg:text-left text-center text-[1.2rem] text-[#cacaca]'>
                     Savor moments of bliss with every sip, as our expertly crafted coffees and delectable pastries embrace your senses.
                 </p>
-                <div className='flex w-full gap-4 justify-center items-center mt-[1.5rem]'>
-                    <FaIcons.FaInstagram className='w-8 h-8 text-[white] hover:text-[#bf28e0] cursor-pointer transition-all duration-300 ease-linear'/>
-                    <FaIcons.FaTelegram className='w-8 h-8 text-[white] hover:text-[#2399e7] cursor-pointer transition-all duration-300 ease-linear'/>
-                    <FaIcons.FaWhatsapp className='w-8 h-8 text-[white] hover:text-[#2be71e] cursor-pointer transition-all duration-300 ease-linear'/>
-                    <FaIcons.FaMapMarkerAlt className='w-8 h-8 text-[white] hover:text-[#e02828] cursor-pointer transition-all duration-300 ease-linear'/>
-                </div>
             </div>                     
         </section>
         <section id='about' className='mt-[20rem]'>
@@ -85,51 +139,8 @@ function HomePage() {
                 <div className='flex flex-col mt-[2rem]'>
                     <img src='resto2.jpg' className='w-[80%] self-center'/>
                     <div className='flex gap-10 w-fit flex-wrap lg:m-0 m-10 h-fit py-8 px-10 items-center justify-center rounded-2xl bg-[#0e0e0e] self-center lg:-mt-20 mt-[1rem]'>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img src='experience.png' alt='' className='rounded-2xl'/>
-                            <p className='text-[#6516dc] font-extrabold text-[2rem]'>
-                                7+
-                            </p>
-                            <p className='text-[#aeaeae] font-bold text-[1.1rem]'>
-                                Years Of Experience
-                            </p>
-                        </div>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img 
-                            src='menu.png' 
-                            alt=''
-                            className='rounded-2xl'/>
-                            <p className='text-[#6516dc] font-extrabold text-[2rem]'>
-                                30+
-                            </p>
-                            <p className='text-[#aeaeae] font-bold text-[1.1rem]'>
-                                Dishes in Our Menu
-                            </p>
-                        </div>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img 
-                            src='reviews.png' 
-                            alt=''
-                            className='rounded-2xl'/>
-                            <p className='text-[#6516dc] font-extrabold text-[2rem]'>
-                                500+
-                            </p>
-                            <p className='text-[#aeaeae] font-bold text-[1.1rem]'>
-                                Customer Reviews
-                            </p>
-                        </div>
-                        <div className='flex flex-col justify-center items-center'>
-                            <img 
-                            src='happy.png' 
-                            alt=''
-                            className='rounded-2xl'/>
-                            <p className='text-[#6516dc] font-extrabold text-[2rem]'>
-                                10k+
-                            </p>
-                            <p className='text-[#aeaeae] font-bold text-[1.1rem]'>
-                                Happy Customers
-                            </p>
-                        </div>
+                        {aboutList.map((item)=> (
+                            <ShowingCards item={item}/>))}
                     </div>
                 </div>
             </div>
@@ -137,28 +148,17 @@ function HomePage() {
         <section id='menu'>
             <h1 className='lg:text-[3.5rem] mt-[8rem] text-[white] text-center font-extrabold'>Menu</h1>
             <div className='flex lg:flex-row flex-row lg:px-36 md:px-25 px-10 justify-center items-center lg:gap-8 md:gap-6 gap-4 mt-[2rem]'>
+            {menu_items.map((items) => (
                 <div className='flex flex-col lg:gap-8 md:gap-6 gap-4'>
-                    <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
-                        <img src="menu1.jpg" alt="" className='rounded-[30px]'/>
-                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Caesar Salad</p>$.40<p></p></div>
-                    </div>
-                    <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
-                        <img src="menu4.jpg" alt="" className='rounded-[30px]'/>
-                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Sauteed mushrooms with pumpkin and sweet pepper</p>$.60<p></p></div>
-                    </div>
+                    {items.map((item) =>
+                    (<div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
+                        <img src={item.image} alt="" className='rounded-[30px] hover:scale-110 overflow-hidden transition-all duration-300 ease-linear cursor-pointer'/>
+                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>{item.name}</p>$.{item.price}<p></p></div>
+                    </div>))}
                 </div>
-                <div className='flex flex-col lg:gap-8 md:gap-6 gap-4'>
-                    <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
-                        <img src="menu2.jpg" alt="" className='rounded-[30px]'/>
-                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Christmas salad</p>$.35<p></p></div>
-                    </div>
-                    <div className='relative rounded-[30px] overflow-hidden cursor-pointer group'>
-                        <img src="menu3.jpg" alt="" className='rounded-[30px]'/>
-                        <div className='absolute inset-0 bg-[#2e2e2ed4] flex flex-col justify-center items-center text-2xl text-white opacity-0 group-hover:opacity-100 transition-all duration-500 ease-linear'><p>Chicken Feast Pizza</p>$.20<p></p></div>
-                        
-                    </div>
-                </div>
-            </div>
+            ))}
+        </div>
+        <Menu/>
         </section>
         <section id='contact'>
             <h1 className='lg:text-[3.5rem] mt-[8rem] text-[white] text-center font-extrabold'>Contact Us</h1>
@@ -311,5 +311,18 @@ function HomePage() {
     </div>
   )
 }
+ const ShowingCards = ({ item }) => {
+    return(
+        <div className='flex flex-col justify-center items-center'>
+            <img src={item.image} alt='' className='rounded-2xl'/>
+            <p className='text-[#6516dc] font-extrabold text-[2rem]'>
+                {item.txt1}
+            </p>
+            <p className='text-[#aeaeae] font-bold text-[1.1rem]'>
+                {item.txt2}
+            </p>
+        </div>
+    )
+ }
 
 export default HomePage
